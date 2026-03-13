@@ -1,20 +1,27 @@
 #ifndef node_h
 #define node_h
+
+  string menu[] ={"Ramen","Somtum","Fried Chicken"};
+  int price[]= {100,20,50};
+
 class NODE{
-     int data;
+     int ord,qty;
     NODE *nextPtr;
 public:
-    NODE(int);
+    NODE(int,int);
     ~NODE();
     void set_next(NODE*);
     NODE* get_next();
     int get_value();
+     int get_price();/* ADDITIONAL FUNCTION */
 };
 typedef NODE* NodePtr;
 
 
-NODE::NODE(int x){
-    data=x;
+
+NODE::NODE(int x,int y){
+    ord=x;
+    qty=y;
     nextPtr=NULL;
    
 }
@@ -24,7 +31,22 @@ NODE* NODE::get_next(){
 }
 
 int NODE::get_value(){
-    return data;
+    return ord;
+
+}
+
+int NODE::get_price(){
+
+    
+  if(ord<= sizeof(price)/sizeof(int)){
+         cout<<menu[ord-1]<<endl;
+         return price[ord-1]*qty;
+  }
+  else 
+  cout<<"No Food"<<endl;
+  return 0;
+
+    
 
 }
 
@@ -34,7 +56,7 @@ void NODE::set_next(NODE *t){
 
 }
 NODE::~NODE(){
-     cout<<" "<<data<<endl;
+     cout<<"Removing "<<menu[ord-1]<<endl;
 
 }
 

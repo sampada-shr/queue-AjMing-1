@@ -9,12 +9,24 @@ int main(int argc , char **argv) {
    
 
  for(i=1;i<argc;i++){
+      int price,cash;
         if(strcmp(argv[i],"x")==0){
-            x=q.dequeue();
-            if(x!=-1) cout<<"dequeing "<<x<<endl;
+            price=q.dequeue();
+            cout<<"You have to pay "<<price<<endl;
+            do{
+               cout<<"Cash:";
+              cin>>cash;
+            }
+            while(price>cash);
+            cout<<"Thank you"<<endl;
+            if(cash-price >0) cout<<"Here is your "<<cash-price<<" change."<<endl;
+
+            cout<<"=============="<<endl;
+
         }
         else {
-       q.enqueue(atoi(argv[i]));
+           if(i+1<argc) q.enqueue(atoi(argv[i]),atoi(argv[i+1]));
+           i++;
            
         }
  }
