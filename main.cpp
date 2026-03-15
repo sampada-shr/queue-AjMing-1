@@ -17,7 +17,7 @@ int main(int argc , char **argv) {
             if(price==0)
             {cout<<"We don't have that food. You don't have to pay."<<endl;}
 
-            else{
+            else if (price!=-1){
               cout<<"You have to pay "<<price<<endl;
             /* 1.Ask the customer to pay*/
             while(1){
