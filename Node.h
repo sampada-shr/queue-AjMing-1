@@ -58,7 +58,7 @@ void NODE::set_next(NODE *t){
 
 }
 NODE::~NODE(){
-     cout<<"dequeing  "<<ord<<endl;
+     cout<<"dequeing  "<<ord<< " Got: "<<menu[ord-1]<<endl;
 
 }
 
