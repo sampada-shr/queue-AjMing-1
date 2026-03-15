@@ -7,7 +7,7 @@ class Queue {
 	int size;
 public:
   /*3. Modify enqueue here to take in 2 info*/
-    void enqueue(int;
+    void enqueue(int,int);
     int dequeue();
     Queue();
     ~Queue();
@@ -15,9 +15,9 @@ public:
 
 
   /*4. Also odifiy enqueue here to take in 2 info*/
-void Queue::enqueue(int x){
+void Queue::enqueue(int x,int y){
  
-  NodePtr new_node= new NODE(x);
+  NodePtr new_node= new NODE(x,y);
 if(new_node){ 
     /* Add head and tail for me please */
        if(size==0) headPtr=new_node;
@@ -40,8 +40,6 @@ int Queue::dequeue(){
      --size;
      return v;
 
-
-    
   }
   cout<<"Empty queue";
   return -1;
@@ -54,6 +52,7 @@ Queue::Queue(){
     tailPtr=NULL;
     size=0;   
 }
+
 Queue::~Queue(){
       while(size>0) dequeue();
     //delete all remaning Queue (i.e. DQ all) 

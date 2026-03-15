@@ -1,5 +1,6 @@
 #ifndef node_h
 #define node_h
+#include <string>
 
 /*6 You can put your menu list here*/
   string menu[] ={"Ramen","Somtum","Fried Chicken"};
@@ -11,7 +12,7 @@ class NODE{
     NODE *nextPtr;
 public:
 
-    NODE(int);
+    NODE(int,int);
     ~NODE();
     void set_next(NODE*);
     NODE* get_next();
@@ -26,16 +27,13 @@ NODE::NODE(int x,int y){
     ord=x;
     qty=y;
     nextPtr=NULL;
-   
 }
 NODE* NODE::get_next(){
     return nextPtr;
-
 }
 
 int NODE::get_value(){
     return ord;
-
 }
 
 
@@ -50,10 +48,8 @@ int NODE::get_price(){
   }
   else 
   cout<<"No Food"<<endl;
+
   return 0;
-
-    
-
 }
 
 
